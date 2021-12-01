@@ -1,12 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _12_print_sorted_dictionary
+class Dictionary
 {
-    class Program
+    public static void PrintSorted(Dictionary<string, string> myDict)
     {
-        static void Main(string[] args)
+        List<string> sortedKeys = new List<string>();
+
+        foreach (KeyValuePair<string, string> kvp in myDict)
         {
-            Console.WriteLine("Hello World!");
+            sortedKeys.Add(kvp.Key);
+        }
+        sortedKeys.Sort();
+        
+        foreach (string str in sortedKeys)
+        {
+            Console.WriteLine("{0}: {1}", str, myDict[str]);
         }
     }
 }
