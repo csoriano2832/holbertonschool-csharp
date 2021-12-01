@@ -13,14 +13,9 @@ class List
             return (-1);
         }
 
-        foreach (int number in myList)
-        {
-            if (number > max)
-            {
-                max = number;
-            }
-        }
-        
+        myList.Sort();
+        max = myList[myList.Count - 1];
+
         return (max);
     }
 }
