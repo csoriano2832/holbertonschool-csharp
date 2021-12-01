@@ -7,7 +7,7 @@ class List
     {
         int max = 0;
 
-        if (myList is null || myList.Count == 0)
+        if (myList == null || myList.Count == 0)
         {
             Console.WriteLine("List is empty");
             return (-1);
