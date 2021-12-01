@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Dictionary
 {
@@ -7,15 +8,9 @@ class Dictionary
     {
         List<string> sortedKeys = new List<string>();
 
-        foreach (KeyValuePair<string, string> kvp in myDict)
+        foreach (KeyValuePair<string, string> kvp in myDict.OrderBy(key => key.Key))
         {
-            sortedKeys.Add(kvp.Key);
-        }
-        sortedKeys.Sort();
-        
-        foreach (string str in sortedKeys)
-        {
-            Console.WriteLine("{0}: {1}", str, myDict[str]);
+            Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value);
         }
     }
 }
