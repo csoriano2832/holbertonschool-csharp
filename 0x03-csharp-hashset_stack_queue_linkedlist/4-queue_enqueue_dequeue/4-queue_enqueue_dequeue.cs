@@ -1,12 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _4_queue_enqueue_dequeue
+class MyQueue
 {
-    class Program
+    public static Queue<string> Info(Queue<string> aQueue, string newItem, string search)
     {
-        static void Main(string[] args)
+        Console.WriteLine($"Number of items: {aQueue.Count}");
+
+        if (aQueue.Count > 0)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"First item: {aQueue.Peek()}");
         }
+        else
+        {
+            Console.WriteLine("Queue is empty");
+        }
+
+        Console.WriteLine($"Queue contains \"{search}\": {(aQueue.Contains(search) ? "True" : "False")}");
+
+        if (aQueue.Contains(search))
+        {
+            string result;
+            do
+            {
+                result = aQueue.Dequeue();
+            } while (result != search);
+
+        }
+
+        aQueue.Enqueue(newItem);
+
+        return (aQueue);
     }
 }

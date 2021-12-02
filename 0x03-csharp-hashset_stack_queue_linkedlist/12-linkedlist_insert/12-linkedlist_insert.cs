@@ -1,12 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _12_linkedlist_insert
+class LList
 {
-    class Program
+    public static LinkedListNode<int> Insert(LinkedList<int> myLList, int n)
     {
-        static void Main(string[] args)
+        LinkedListNode<int> node = new LinkedListNode<int>(n);
+        LinkedListNode<int> current;
+        
+        current = myLList.First;
+
+        while (current != null)
         {
-            Console.WriteLine("Hello World!");
+            if (current.Value > n)
+            {
+                myLList.AddBefore(current, node);
+                break;
+            }
+
+            current = current.Next;
         }
+
+        return (node);
     }
 }
