@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Dictionary
 {
     public static string BestScore(Dictionary<string, int> myList)
     {
-        int bestScore = 0;
-        string name = "";
+        int bestScore;
 
         if (myList.Count == 0)
         {
             return ("None");
         }
 
-        foreach (KeyValuePair<string, int> kvp in myList)
+        bestScore = myList.Values.Max();
+        foreach (string key in myList.Keys)
         {
-            if (kvp.Value > bestScore)
+            if (myList[key] == bestScore)
             {
-                name = kvp.Key;
-                bestScore = kvp.Value;
+                return (key);
             }
         }
 
-        return (name);
+        return ("None");
     }
 }
