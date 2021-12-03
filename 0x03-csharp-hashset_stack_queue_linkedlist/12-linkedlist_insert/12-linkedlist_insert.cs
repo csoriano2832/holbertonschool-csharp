@@ -30,6 +30,11 @@ class LList
 
                 current = current.Next;
             }
+            
+            if (current == null)
+            {
+                myLList.AddLast(node);
+            }
         }
 
         return (node);
