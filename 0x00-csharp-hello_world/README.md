@@ -33,15 +33,15 @@ To open the terminal inside VSCode press ``CTRL + ` ``
 
 ### Initializing a C# project
 
-![](/screenshots/dotnet_new_console.png)
+![alt text](/screenshots/dotnet_new_console.png)
 
 ### Building a C# project
 
-![](/screenshots/dotnet_build.png)
+![alt text](/screenshots/dotnet_build.png)
 
 ### Running a C# project
 
-![](/screenshots/dotnet_run.png)
+![alt text](/screenshots/dotnet_run.png)
 
 ## Printing text and variables to screen
 
