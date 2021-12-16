@@ -32,11 +32,9 @@ namespace MyMath.Tests
         [Test]
         public void MatrixIsNull()
         {
-            int[,] matrix = null;
+            int[,] result = Matrix.Divide(null, 2);
 
-            int[,] result = Matrix.Divide(matrix, 2);
-
-            Assert.AreEqual(null, result);
+            Assert.IsNull(result);
         }
     }
 }
