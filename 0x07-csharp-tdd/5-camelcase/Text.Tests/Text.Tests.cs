@@ -1,18 +1,37 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace Text.Tests
 {
+    [TestFixture]
+    /// <summary>Tests Alz</summary>
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public void EmptyString()
         {
-            Assert.Pass();
+            string s = "";
+            
+            int result = Str.CamelCase(s);
+
+            Assert.AreEqual(0, result);
+        }
+        [Test]
+        public void NullString()
+        {
+            string s = null;
+            
+            int result = Str.CamelCase(s);
+
+            Assert.AreEqual(0, result);
+        }
+        [Test]
+        public void ReturnsCorrectNumber()
+        {
+            string s = "soThisIsATestToSeeIfItWorks";
+            
+            int result = Str.CamelCase(s);
+
+            Assert.AreEqual(10, result);
         }
     }
 }
