@@ -10,9 +10,26 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void IsEmpty()
         {
-            Assert.Pass();
+            string s = "";
+            int result = Text.Str.UniqueChar(s);
+            Assert.That(result, Is.EqualTo(-1));
         }
+        [Test]
+        public void OnlyRepeatingChars()
+        {
+            string s = "wwwwwwwwwwwwwwwwwwwwwwwww";
+            int result = Text.Str.UniqueChar(s);
+            Assert.That(result, Is.EqualTo(-1));
+        }
+        [Test]
+        public void ReturnsCorrectIndex()
+        {
+            string s = "abcdefghijklmnopqrstuvwxyzabcdfghijkzxywvutsrponlm";
+            int result = Text.Str.UniqueChar(s);
+            Assert.That(result, Is.EqualTo(4));
+        }
+        
     }
 }
