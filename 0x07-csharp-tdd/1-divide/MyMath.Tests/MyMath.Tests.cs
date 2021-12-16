@@ -17,7 +17,6 @@ namespace MyMath.Tests
             int[,] matrixDivided = {{1, 2}, {3, 4}};
             
             var result = Matrix.Divide(matrix, 2);
-            Assert.IsNotNull(result);
             Assert.AreEqual(matrixDivided, result);
         }
 
@@ -27,7 +26,17 @@ namespace MyMath.Tests
             int[,] matrix = {{2, 4}, {6, 8}};
 
             var result = Matrix.Divide(matrix, 0);
-            Assert.IsNull(result);
+            Assert.AreEqual(null, result);
+        }
+
+        [Test]
+        public void MatrixIsNull()
+        {
+            int[,] matrix = null;
+
+            int[,] result = Matrix.Divide(matrix, 2);
+
+            Assert.AreEqual(null, result);
         }
     }
 }

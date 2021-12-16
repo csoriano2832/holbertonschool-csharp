@@ -14,10 +14,10 @@ namespace MyMath.Tests
         [Test]
         public void GetsMaxNumberSuccesfully()
         {
-            List<int> nums = new List<int> {3, 4, 7, 2, 10};
+            List<int> nums = new List<int> {98, 1024, -98, 0, 64, -512};
             var result = Operations.Max(nums);
 
-            Assert.AreEqual(10, result);
+            Assert.AreEqual(1024, result);
         }
 
         [Test]

@@ -17,13 +17,9 @@ namespace MyMath
             }
 
             int max = 0;
-            foreach (int num in nums)
-            {
-                if (num > max)
-                {
-                    max = num;
-                }
-            }
+            
+            nums.Sort();
+            max = nums[nums.Count - 1];
 
             return (max);
         }
