@@ -3,25 +3,19 @@ using System.Collections.Generic;
 
 namespace MyMath
 {
-    /// <summary>Represents basic math operations.</summary>
+    ///<summary>Performs mathamatical operations on inputs.</summary>
     public class Operations
     {
-        /// <summary>Gets the max (biggest) number in a list.</summary>
-        /// <param name="nums">A list of integers.</param>
-        /// <returns>The max integer</returns>
+        ///<summary>Finds the Max value in a list of integers.</summary>
         public static int Max(List<int> nums)
         {
-            if (nums.Count == 0)
+            int num = 0;
+            if (nums.Count != 0)
             {
-                return 0;
+                nums.Sort();
+                num = nums[nums.Count - 1];
             }
-
-            int max = 0;
-            
-            nums.Sort();
-            max = nums[nums.Count - 1];
-
-            return (max);
+            return (num);
         }
     }
 }

@@ -1,8 +1,7 @@
 using NUnit.Framework;
-using MyMath;
 using System.Collections.Generic;
 
-namespace MyMath.Tests
+namespace Tests
 {
     public class Tests
     {
@@ -12,21 +11,18 @@ namespace MyMath.Tests
         }
 
         [Test]
-        public void GetsMaxNumberSuccesfully()
-        {
-            List<int> nums = new List<int> {98, 1024, -98, 0, 64, -512};
-            var result = Operations.Max(nums);
-
-            Assert.AreEqual(1024, result);
-        }
-
-        [Test]
-        public void VoidListReturns()
+        public void EmptyList()
         {
             List<int> nums = new List<int>();
-            var result = Operations.Max(nums);
-
-            Assert.AreEqual(0, result);
+            int output = MyMath.Operations.Max(nums);
+            Assert.That(output, Is.EqualTo(0));
+        }
+        [Test]
+        public void TestMaxList()
+        {
+            List<int> nums = new List<int>() {98, -10, 0, 32, 972, 12, 1024, -727, -98, 50, 8};
+            int output = MyMath.Operations.Max(nums);
+            Assert.That(output, Is.EqualTo(1024));
         }
     }
 }
