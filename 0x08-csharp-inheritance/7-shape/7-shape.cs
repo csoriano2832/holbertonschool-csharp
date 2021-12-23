@@ -1,12 +1,65 @@
 ﻿using System;
 
-namespace _7_shape
+/// <summary>Base class.</summary>
+public class Shape
 {
-    class Program
+    /// <summary>This method is not fully implemented.</summary>
+    public virtual int Area()
     {
-        static void Main(string[] args)
+        throw new NotImplementedException("Area() is not implemented");
+    }
+}
+
+/// <summary>Derived class that inherits from Shape</summary>
+public class Rectangle : Shape
+{
+    private int width;
+    private int height;
+
+    /// <summary>Gets or sets the value of width.</summary>
+    public int Width
+    {
+        get => width;
+        set
         {
-            Console.WriteLine("Hello World!");
+            if (value < 0)
+            {
+                throw new ArgumentException("Width must be greater than or equal to 0");
+            }
+            else
+            {
+                width = value;
+            }
         }
     }
+    
+    /// <summary>Gets or sets the value of height.</summary>
+    public int Height
+    {
+        get => height;
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Height must be greater than or equal to 0");
+            }
+            else
+            {
+                height = value;
+            }
+        }
+    }
+
+    /// <summary></summary>
+    public new int Area()
+    {
+        return width * height;
+    }
+
+    /// <summary></summary>
+    public override string ToString()
+    {
+        return $"[Rectangle] {width} / {height}";
+    }
+
 }

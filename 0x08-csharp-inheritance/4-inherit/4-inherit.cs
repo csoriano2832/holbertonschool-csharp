@@ -1,12 +1,7 @@
 ﻿using System;
 
-namespace _4_inherit
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
-}
+/// <summary>Base class.</summary>
+public class Animal { }
+
+/// <summary>Derived class that inherits from Animal.</summary>
+public class Dog : Animal { }

@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace _5_shape
+/// <summary>Provides methods for setting and accesing values in a shape object</summary>
+public class Shape
 {
-    class Program
+    /// <summary>This method is not fully implemented.</summary>
+    public virtual int Area()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        throw new NotImplementedException("Area() is not implemented");
     }
 }
