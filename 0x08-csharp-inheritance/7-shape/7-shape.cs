@@ -50,13 +50,13 @@ public class Rectangle : Shape
         }
     }
 
-    /// <summary></summary>
+    /// <summary>Returns the area of a rectangle.</summary>
     public new int Area()
     {
         return width * height;
     }
 
-    /// <summary></summary>
+    /// <summary>Overrides default string representation of a rectangle.</summary>
     public override string ToString()
     {
         return $"[Rectangle] {width} / {height}";
