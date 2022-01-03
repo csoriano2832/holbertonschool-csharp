@@ -17,19 +17,32 @@ namespace Tests
             Assert.That(result, Is.EqualTo(-1));
         }
         [Test]
-        public void OnlyRepeatingChars()
+        public void NoUniqueCharacters()
         {
-            string s = "wwwwwwwwwwwwwwwwwwwwwwwww";
+            string s = "hellohello";
             int result = Text.Str.UniqueChar(s);
             Assert.That(result, Is.EqualTo(-1));
         }
         [Test]
-        public void ReturnsCorrectIndex()
+        public void FirstUniqueIsFirstCharacter()
         {
-            string s = "abcdefghijklmnopqrstuvwxyzabcdfghijkzxywvutsrponlm";
+            string s = "helloworld";
             int result = Text.Str.UniqueChar(s);
-            Assert.That(result, Is.EqualTo(4));
+            Assert.That(result, Is.EqualTo(0));
         }
-        
+        [Test]
+        public void FirstUniqueInMiddle()
+        {
+            string s = "helloholberton";
+            int result = Text.Str.UniqueChar(s);
+            Assert.That(result, Is.EqualTo(8));
+        }
+        [Test]
+        public void FirstUniqueIsLastCharacter()
+        {
+            string s = "aabbccddeef";
+            int result = Text.Str.UniqueChar(s);
+            Assert.That(result, Is.EqualTo(10));
+        }
     }
 }
