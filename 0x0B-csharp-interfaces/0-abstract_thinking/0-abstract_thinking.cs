@@ -2,11 +2,11 @@
 
 abstract class Base
 {
-    public string name;
+    public string name { get; set; }
 
     public override string ToString()
     {
-        var type = this.GetType().Name;
+        Type type = this.GetType();
 
         return ($"{name} is a {type}");
     }
