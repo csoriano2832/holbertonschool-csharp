@@ -126,7 +126,7 @@ class RoomObjects
     {
         foreach (Base item in roomObjects)
         {
-            if (item is IInteractive && type == typeof(IInteractive))
+            if (type == typeof(IInteractive) && item is IInteractive)
             {
                 (item as IInteractive).Interact();
             }
