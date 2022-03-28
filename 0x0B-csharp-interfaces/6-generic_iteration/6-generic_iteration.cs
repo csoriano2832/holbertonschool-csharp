@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 abstract class Base
@@ -120,24 +121,22 @@ class Key : Base, ICollectable
         }
     }
 }
-class RoomObjects
+class Objs<T> : IEnumerable<T>
 {
-    public static void IterateAction(List<Base> roomObjects, Type type)
+    List<T> objs = new List<T>();
+
+    public void Add(T obj)
     {
-        foreach (Base item in roomObjects)
-        {
-            if (item is IInteractive && type == typeof(IInteractive))
-            {
-                (item as IInteractive).Interact();
-            }
-            else if (item is IBreakable && type == typeof(IBreakable))
-            {
-                (item as IBreakable).Break();
-            }
-            else if (item is ICollectable && type == typeof(ICollectable))
-            {
-                (item as ICollectable).Collect();
-            }
-        }
+        objs.Add(obj);
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        return objs.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
