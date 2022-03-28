@@ -66,7 +66,6 @@ class Decoration : Base, IInteractive, IBreakable
         {
             Console.WriteLine($"The {name} has been broken.");
         }
-
         else if (isQuestItem == true)
         {
             Console.WriteLine($"You look at the {name}. There's a key inside.");
@@ -119,21 +118,22 @@ class Key : Base, ICollectable
         }
     }
 }
+
 class RoomObjects
 {
     public static void IterateAction(List<Base> roomObjects, Type type)
     {
         foreach (Base item in roomObjects)
         {
-            if (item is IInteractive && type == typeof(IInteractive))
+            if (type == typeof(IInteractive) && item is IInteractive)
             {
                 (item as IInteractive).Interact();
             }
-            else if (item is IBreakable && type == typeof(IBreakable))
+            else if (type == typeof(IBreakable) && item is IBreakable)
             {
                 (item as IBreakable).Break();
             }
-            else if (item is ICollectable && type == typeof(ICollectable))
+            else if (type == typeof(ICollectable) && item is ICollectable)
             {
                 (item as ICollectable).Collect();
             }
