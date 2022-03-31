@@ -3,9 +3,9 @@
 ///<summary>This class represents a Player object.</summary>
 public class Player
 {
-    private string name { get; set; }
-    private float maxHp { get; set;}
-    private float hp { get; set; }
+    private string name;
+    private float maxHp;
+    private float hp;
 
     ///<summary>Default constructor method.</summary>
     ///
