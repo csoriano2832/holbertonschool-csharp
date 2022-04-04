@@ -43,25 +43,28 @@ class Player
     public void TakeDamage(float damage)
     {
         if (damage <= 0)
-            Console.WriteLine($"{name} takes 0 damage!");
-        else
         {
-            Console.WriteLine($"{name} takes {damage} damage!");
-            ValidateHP(hp - damage);
+            Console.WriteLine($"{name} takes 0 damage!");
+            damage = 0;
         }
+        else
+            Console.WriteLine($"{name} takes {damage} damage!");
+        hp -= damage;
+        ValidateHP(hp);
     }
 
     ///<summary>Prints health points recovered</summary>
     public void HealDamage(float heal)
     {
         if (heal <= 0)
-            Console.WriteLine($"{name} heals 0 HP!");
-        else
         {
-            Console.WriteLine($"{name} heals {heal} HP!");
-            ValidateHP(hp + heal);
+            Console.WriteLine($"{name} heals 0 HP!");
+            heal = 0;
         }
-
+        else
+            Console.WriteLine($"{name} heals {heal} HP!");
+        hp += heal;
+        ValidateHP(hp);
     }
 
     ///<summary>Sets the new value of HP</summary>
@@ -90,25 +93,15 @@ class Player
     private void CheckStatus(object sender, CurrentHPArgs e)
     {
         if (e.currentHp == maxHp)
-        {
             status = $"{name} is in perfect health!";
-        }
         else if (e.currentHp >= (maxHp / 2) && e.currentHp < maxHp)
-        {
             status = $"{name} is doing well!";
-        }
         else if (e.currentHp >= (maxHp / 4) && e.currentHp < (maxHp / 2))
-        {
             status = $"{name} isn't doing too great...";
-        }
         else if (e.currentHp > 0 && e.currentHp < (maxHp / 4))
-        {
             status = $"{name} needs help!";
-        }
         else
-        {
             status = $"{name} is knocked out!";
-        }
         Console.WriteLine(status);
     }
 }
